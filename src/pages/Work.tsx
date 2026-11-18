@@ -66,6 +66,21 @@ export default function Work() {
         </div>
         <div className="lg:col-span-5 lg:justify-self-end">
           <FilterChips value={filter} onChange={setFilter} count={shown.length} />
+          {/* Visible feedback: the first project fits every filter, so the top of the list alone doesn't show a change */}
+          <p className="mt-3 text-[14px] leading-relaxed text-muted">
+            Showing {shown.length} of {projects.length} projects
+            {filter !== 'all' && shown.length > 0 && (
+              <>
+                {': '}
+                {shown.map((p, i) => (
+                  <span key={p.slug}>
+                    {i > 0 && ', '}
+                    <a href={`#work-${p.slug}`} className="link text-ink/90">{p.org}</a>
+                  </span>
+                ))}
+              </>
+            )}
+          </p>
         </div>
       </header>
 
