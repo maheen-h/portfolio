@@ -1,10 +1,10 @@
 // Production build: bundles the React app with esbuild and compiles Tailwind CSS v4.
 // Output goes to dist/, a static site that any static host (Vercel, Netlify, GitHub Pages) can serve.
 //
-// Optional environment variable:
-//   SITE_URL  The public address, e.g. https://maheen-hassan.vercel.app
-//             On Vercel this is filled in automatically from VERCEL_PROJECT_PRODUCTION_URL.
-//             Used for the canonical link, social-sharing image and sitemap.
+// The public address, used for the canonical link, social-sharing image and sitemap.
+// Change PRODUCTION_URL when the site moves (for example to a custom domain),
+// or override it with a SITE_URL environment variable.
+const PRODUCTION_URL = 'https://maheen-h.vercel.app';
 import * as esbuild from 'esbuild';
 import { compile } from 'tailwindcss';
 import { createRequire } from 'node:module';
@@ -17,10 +17,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const src = path.join(root, 'src');
 const dist = path.join(root, 'dist');
 
-const siteUrl = (
-  process.env.SITE_URL ||
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : '')
-).replace(/\/$/, '');
+const siteUrl = (process.env.SITE_URL || PRODUCTION_URL).replace(/\/$/, '');
 
 await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });

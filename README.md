@@ -27,7 +27,7 @@ After any change to the content or code, run `npm run build` again and refresh t
    - Install command: `npm install`
 4. Choose **Deploy**. Your site appears at a free address ending in `.vercel.app`.
 
-Vercel tells the build its own address, so the sharing preview image and sitemap use the right URL automatically. If you add a custom domain later, add an environment variable in Vercel (**Settings → Environment Variables**) named `SITE_URL` with the full address, for example `https://www.example.com`, then redeploy.
+The live address is https://maheen-h.vercel.app. It is set as `PRODUCTION_URL` at the top of `build.mjs` and used for the sharing preview image, canonical link and sitemap. If you add a custom domain later, change `PRODUCTION_URL` there (or add a `SITE_URL` environment variable in Vercel under **Settings → Environment Variables**) and redeploy.
 
 Every time you push a change to the `main` branch, Vercel rebuilds and publishes the site within about a minute.
 
