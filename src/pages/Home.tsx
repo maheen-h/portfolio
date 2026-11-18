@@ -4,6 +4,19 @@ import { projects, getProject } from '../content/projects';
 import { site } from '../content/site';
 import { creditLabel, type Credit } from '../content/types';
 import { demos } from '../content/lab';
+import { useState } from 'react';
+import ImmersiveHero from '../components/ImmersiveHero';
+
+/** The immersive intro runs only where motion is welcome and the device can carry it. */
+function canRunImmersive() {
+  if (typeof window === 'undefined') return false;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
+  const nav = navigator as Navigator & { connection?: { saveData?: boolean }; deviceMemory?: number };
+  if (nav.connection?.saveData) return false;
+  if ((nav.hardwareConcurrency || 4) <= 2) return false;
+  if (nav.deviceMemory !== undefined && nav.deviceMemory <= 2) return false;
+  return true;
+}
 
 const proof: { figure: string; label: string; slug?: string; credit: Credit }[] = [
   { figure: '16 wks', label: 'Zero to an internal AI MVP, with a team of 10+ I hired', slug: 'global-pathways-ai', credit: 'led' },
@@ -55,11 +68,19 @@ const groups: { name: string; line: string; result: string; items: Capability[] 
 export default function Home() {
   const [filter, setFilter] = useProjectFilter();
   const count = projects.filter((p) => matches(p, filter)).length;
+  const [immersive] = useState(canRunImmersive);
+  const skipToWork = () => {
+    const el = document.getElementById('work-heading')?.closest('section');
+    if (!el) return;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
+  };
 
   return (
+    <>
+    {immersive && <ImmersiveHero onSkip={skipToWork} />}
     <Page>
       {/* Who I am, what makes me different, and the proof */}
-      <section className="grid gap-10 pb-16 pt-12 sm:pt-16 lg:grid-cols-12 lg:items-stretch lg:gap-12 lg:pb-20 lg:pt-20" aria-labelledby="hero-title">
+      {!immersive && <section className="grid gap-10 pb-16 pt-12 sm:pt-16 lg:grid-cols-12 lg:items-stretch lg:gap-12 lg:pb-20 lg:pt-20" aria-labelledby="hero-title">
         <div className="flex flex-col justify-center lg:col-span-7">
           <p className="text-[15px] text-ledger">Maheen Hassan, product manager for AI, SaaS and cloud-based products</p>
           <h1 id="hero-title" tabIndex={-1} className="display mt-4 text-[42px] font-semibold leading-[1.0] outline-none sm:text-[60px] lg:text-[72px]">
@@ -97,7 +118,7 @@ export default function Home() {
             })}
           </ul>
         </div>
-      </section>
+      </section>}
 
       {/* Project discovery */}
       <section className="border-t border-rule pt-12 sm:pt-16" aria-labelledby="work-heading">
@@ -161,5 +182,6 @@ export default function Home() {
         </ul>
       </section>
     </Page>
+    </>
   );
 }
