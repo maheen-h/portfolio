@@ -24,7 +24,8 @@ export function Header({ route }: { route: string }) {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-rule bg-paper/90 backdrop-blur">
+    <>
+    <header className={`sticky top-0 z-40 border-b border-rule ${open ? 'bg-paper' : 'bg-paper/90 backdrop-blur'}`}>
       <div className="mx-auto flex h-16 max-w-[1320px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-12">
         <a href="#" className="display inline-flex min-h-11 items-center text-[17px] font-semibold tracking-[-0.01em]">{site.name}</a>
         <nav aria-label="Main" className="hidden md:block">
@@ -47,12 +48,13 @@ export function Header({ route }: { route: string }) {
           {open ? 'Close' : 'Menu'}
         </button>
       </div>
+    </header>
       {open && (
-        <nav id="mobile-nav" aria-label="Main" className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto bg-paper px-5 pb-10 pt-4 md:hidden">
+        <nav id="mobile-nav" aria-label="Main" className="fixed inset-x-0 bottom-0 top-16 z-50 overflow-y-auto bg-paper px-5 pb-10 pt-4 md:hidden">
           <ul className="divide-y divide-rule border-y border-rule">
             {nav.map((n) => (
               <li key={n.href}>
-                <a href={n.href} className="display flex min-h-16 items-center justify-between text-[26px] font-semibold" aria-current={n.href.slice(1) === section ? 'page' : undefined}>
+                <a href={n.href} onClick={() => setOpen(false)} className="display flex min-h-16 items-center justify-between text-[26px] font-semibold" aria-current={n.href.slice(1) === section ? 'page' : undefined}>
                   {n.label}
                   {n.href.slice(1) === section && <span className="h-2 w-2 rounded-full bg-ledger" aria-hidden="true" />}
                 </a>
@@ -62,7 +64,7 @@ export function Header({ route }: { route: string }) {
           <div className="mt-8"><LinkedInButton /></div>
         </nav>
       )}
-    </header>
+    </>
   );
 }
 
