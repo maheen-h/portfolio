@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@font-face { font-family: "Lora"; src: url("fonts/Lora-Variable.woff") format("woff"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Lora"; src: url("fonts/Lora-Italic-Variable.woff") format("woff"); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Regular.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Medium.woff") format("woff"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-SemiBold.woff") format("woff"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Inter Display"; src: url("fonts/InterDisplay-Medium.woff") format("woff"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Inter Display"; src: url("fonts/InterDisplay-SemiBold.woff") format("woff"); font-weight: 600; font-display: swap; }
+
+/* Dark foundation with one bold accent (coral) for outcomes, chosen options,
+   primary actions and active states. A muted rose marks options not chosen and
+   risks. Project images sit on light tinted panels so screenshots stay true. */
+@theme {
+  --color-paper: #1b1a18;
+  --color-sheet: #24221f;
+  --color-tile: #2c2a26;
+  --color-ink: #f2ede5;
+  --color-muted: #a8a094;
+  --color-rule: #3a3732;
+  --color-night: #121110;
+  --color-night-2: #1e1c1a;
+  --color-ledger: #ef6a4e;
+  --color-ledger-wash: #3a2520;
+  --color-carmine: #d29a8e;
+  --color-note: #3a3220;
+  --color-sand: #ebe4d8;
+
+  --font-display: "Inter Display", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@layer base {
+  html { background: var(--color-paper); color: var(--color-ink); -webkit-text-size-adjust: 100%; color-scheme: dark; }
+  body { background: radial-gradient(120% 60% at 75% -10%, #2c2925 0%, var(--color-paper) 55%) no-repeat, var(--color-paper); }
+  body { font-family: var(--font-sans); font-size: 16px; line-height: 1.55; text-rendering: optimizeLegibility; }
+  ::selection { background: var(--color-ledger-wash); }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--color-ledger); outline-offset: 3px; border-radius: 2px; }
+  .tnum { font-variant-numeric: tabular-nums lining-nums; }
+}
+
+@layer components {
+  /* Reading text for case studies and long-form pages */
+  .prose-record { font-size: 1.0625rem; line-height: 1.7; max-width: 68ch; }
+  .prose-record p + p { margin-top: 1em; }
+
+  /* Underlined text link, quiet until hovered */
+  .link { text-decoration: underline; text-decoration-color: var(--color-rule); text-underline-offset: 0.22em; text-decoration-thickness: 1px; transition: text-decoration-color .15s; }
+  .link:hover { text-decoration-color: currentColor; }
+
+  /* Project panels: the screenshot lifts slightly when its card is hovered or focused */
+  .panel-img { transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
+  .card:hover .panel-img, .card:focus-visible .panel-img { transform: translateY(-6px); box-shadow: 0 28px 50px -22px rgba(0,0,0,.6); }
+  .card .panel svg { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .card:hover .panel svg { transform: scale(1.02); }
+  .card .card-title { background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size .35s ease; }
+  .card:hover .card-title, .card:focus-visible .card-title { background-size: 100% 1px; }
+  @media (prefers-reduced-motion: reduce) {
+    .panel-img, .card .panel svg, .card .card-title { transition: none; }
+  }
+
+  .display { font-family: var(--font-display); letter-spacing: -0.035em; }
+  .chapter-num { font-family: var(--font-serif); font-style: italic; }
+}

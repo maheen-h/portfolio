@@ -1,0 +1,23 @@
+{
+  "name": "maheen-hassan-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive product management portfolio for Maheen Hassan",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "npx --yes serve dist",
+    "dev": "node build.mjs && npx --yes serve dist"
+  },
+  "dependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "tailwindcss": "4.3.3"
+  }
+}

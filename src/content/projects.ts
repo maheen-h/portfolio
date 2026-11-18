@@ -1,0 +1,385 @@
+import type { CaseStudy, Source } from './types';
+
+const ggu: Record<string, Source> = {
+  digital: { label: 'GGU announces GGU Digital (April 2026)', url: 'https://ggu.edu/2026/04/13/announcing-ggu-digital-an-ai-global-education-platform/' },
+  psych: { label: 'GGU launches School of Psychology (April 2026)', url: 'https://ggu.edu/2026/04/08/golden-gate-university-launches-school-of-psychology/' },
+  edvisor: { label: 'GGU partners with Edvisor (October 2026)', url: 'https://ggu.edu/2026/10/14/ggu-partners-with-edvisor-to-personalize-learning-across-its-programs/' },
+};
+const utsc: Source = { label: 'UTSC: Hacking personal finance (February 2016)', url: 'https://utsc.utoronto.ca/news-events/archived/hacking-personal-finance' };
+
+export const projects: CaseStudy[] = [
+  {
+    slug: 'global-pathways-ai',
+    org: 'Global Pathways AI',
+    title: 'Building an AI career-planning platform from zero to one',
+    role: 'AI Product Manager',
+    period: 'May 2026 to present',
+    year: 2026,
+    tier: 'major',
+    pillars: ['judgment', 'technical', 'impact'],
+    domains: ['ai', 'saas', 'fin'],
+    short: 'AI career-planning platform, zero to one',
+    proves: 'Zero-to-one AI delivery with a team built from scratch, and an architecture call made on accuracy.',
+    summary:
+      'A B2B education and HR tech platform that helps students and early-career professionals plan careers and pay for education. I hired and led a distributed team of 10+ and delivered an internal MVP in 16 weeks.',
+    status: 'complete',
+    panel: { bg: '#e2e9e5', dark: false },
+    stamp: '16 weeks to MVP',
+    card: {
+      problem: 'Students and early-career professionals need career plans they can trust, including how to pay for their education.',
+      role: 'AI Product Manager. Hired, trained and led a distributed team of 10+ across engineering and design.',
+      decision: 'Moved recommendations from a trained prediction model to an LLM: more accurate and faster, with less customization.',
+      outcome: 'Internal MVP in 16 weeks, about 15% ahead of the original plan. Waitlist open.',
+      evidence: 'The LLM gave more accurate recommendations than the trained model, and was faster.',
+      relevance: 'AI product strategy, LLM integration, technical collaboration and zero-to-one development.',
+    },
+    context: [
+      'Global Pathways AI is a B2B education and HR tech career-planning platform for students, universities, faculty and early-career professionals.',
+      'Alongside career planning, it supports users with AI-driven financial planning, loan planning and sponsorship options for education costs.',
+    ],
+    owned: [
+      'Hired, trained and led a distributed Agile team of 10+ across engineering and design.',
+      'Owned delivery from ideation to an internal MVP across 3 mobile and cross-platform features, including chat and forms.',
+      'Oversaw the engineering team’s model training, dataset curation and evaluation benchmarks, keeping model performance tied to product requirements and user needs.',
+      'Led the engineering integration of generative AI tools, APIs and LLM interfaces into product workflows.',
+    ],
+    decision: {
+      question: 'How should the product make its recommendations?',
+      options: [
+        { label: 'Keep the trained prediction model', note: 'The team had gathered datasets and trained a model to predict which path each student should pursue. It allowed more customization.' },
+        { label: 'Move to a large language model', note: 'More accurate on the product’s core job: recommending a path from many factors. Also faster.', chosen: true },
+      ],
+      why: 'Accurate recommendations were the reason the product existed, so I recommended moving to the approach that was more accurate.',
+      cost: 'Less room to customize the model’s behavior. I judged that an acceptable trade for accuracy.',
+    },
+    execution: [
+      'Resolved technical architecture bottlenecks that were slowing delivery.',
+      'Shaped UX and interaction patterns across the chat and form features, using data analysis to inform improvements.',
+      'Ran delivery in Agile sprints with a team distributed across locations.',
+    ],
+    outcomes: [
+      { figure: '16 weeks', text: 'From zero to an internal MVP, with users on a waitlist.', credit: 'led' },
+      { figure: '~15%', text: 'Delivered about 15% ahead of the original planned timeline.', credit: 'led' },
+      { figure: '10+', text: 'People hired, trained and led across engineering and design.', credit: 'owned' },
+    ],
+    limits: [
+      'This is an internal MVP with a waitlist, not yet a public launch, so there are no user outcome metrics to report yet.',
+    ],
+  },
+  {
+    slug: 'ggu-edvisor-ai',
+    org: 'Golden Gate University',
+    title: 'Deciding where an AI teaching product should, and should not, go',
+    role: 'AI Product Manager',
+    period: 'September to December 2025',
+    year: 2025,
+    tier: 'major',
+    pillars: ['judgment', 'impact'],
+    domains: ['ai', 'saas'],
+    short: 'Where an AI teaching product should, and should not, go',
+    proves: 'Honest AI evaluation, turned into a recommendation executives acted on.',
+    summary:
+      'I led the initial pilot of Edvisor, an AI teaching platform, at Golden Gate University. My evaluation steered it away from Law and toward Business and Psychology. GGU later rolled Edvisor out across 40+ courses.',
+    status: 'complete',
+    panel: { bg: '#e2e6ee', dark: false },
+    stamp: 'Now in 40+ courses',
+    image: {
+      src: 'images/ggu-edvisor.webp',
+      alt: 'A phone showing the Golden Gate University sign-in screen with Log In and Sign Up buttons.',
+      caption: 'Sign-in screen for the Golden Gate University pilot.',
+      ratio: 942 / 1077,
+    },
+    card: {
+      problem: 'Facing enrollment and revenue pressure, the university asked whether generative AI could improve teaching, and where.',
+      role: 'AI Product Manager, a paid university role. Led research, the initial pilot with seven faculty, and stakeholder alignment.',
+      decision: 'Focus on Business and Psychology, not Law, where hallucinations and jurisdiction-specific accuracy were too risky.',
+      outcome: 'GGU later rolled Edvisor out across its foundational AI curriculum and 40 more courses.',
+      evidence: 'Faculty research across APAC and the Americas, pilot testing, and evaluation by discipline.',
+      relevance: 'AI evaluation, research and product judgment.',
+    },
+    context: [
+      'Edvisor is an AI teaching and learning platform. At GGU it was intended for the university’s 6,000+ online, hybrid and remote students.',
+    ],
+    problem: [
+      'The university faced declining enrollment in several legacy programs, particularly Law, while changes in U.S. immigration policy reduced international enrollment, an important source of revenue.',
+      'Leadership needed to improve operational efficiency, maintain academic quality and reach new markets without significantly increasing instructional costs. The question was whether generative AI could help, and where.',
+    ],
+    owned: [
+      'Product management for the initial Edvisor pilot at GGU, in a paid role with the university.',
+      'User research, product evaluation, pilot implementation and stakeholder management.',
+      'The recommendation on where the product should and should not be used.',
+    ],
+    evidence: {
+      methods: [
+        'Discovery sessions with faculty across multiple departments.',
+        'Focus groups, interviews, surveys, user testing and beta testing across APAC and the Americas.',
+        'Pilot testing and technical evaluation of the AI’s performance by discipline.',
+      ],
+      findings: [
+        'Faculty spent significant time preparing lesson plans, assignments and assessments.',
+        'The AI showed strong potential to improve productivity in Business and interdisciplinary programs.',
+        'Law required jurisdiction-specific reasoning and regulatory accuracy beyond what current models could reliably provide.',
+        'Working professionals, veterans, online learners and international students needed different, flexible approaches.',
+      ],
+    },
+    decision: {
+      question: 'Where should the AI teaching product be used?',
+      options: [
+        { label: 'Deploy it across every program', note: 'The starting assumption: if AI helps teaching, roll it out universally, Law included.' },
+        { label: 'Focus on programs where it proved reliable', note: 'Business and Psychology, where AI could improve educator productivity while maintaining academic quality.', chosen: true },
+      ],
+      why: 'Research, pilot testing and technical evaluation showed that legal education carried significant risk from hallucinations and jurisdiction-specific requirements.',
+      cost: 'Law, one of the programs facing declining enrollment, would not get the product.',
+    },
+    execution: [
+      'Designed a phased pilot to validate adoption before any broader rollout.',
+      'Ran the initial pilot with seven faculty members, including onboarding sessions, AI training workshops and product demonstrations.',
+      'Acted as the main link between faculty and the Edvisor product team, turning feedback into product requirements.',
+      'Defined success metrics around faculty adoption, usability, instructional efficiency and scalability.',
+      'Tracked engagement, retention and NPS, and presented pilot outcomes to 50+ executive and faculty stakeholders to secure support for a long-term AI adoption strategy.',
+    ],
+    outcomes: [
+      { text: 'The product was repositioned toward Business and Psychology, away from Law.', credit: 'owned' },
+      { text: 'The pilot supported the launch of GGU’s School of Psychology, focused on human systems in the age of AI.', credit: 'contributed', source: ggu.psych },
+      { text: 'The pilot supported the launch of GGU Digital, the university’s AI-enabled global education platform.', credit: 'contributed', source: ggu.digital },
+      { figure: '40+', text: 'GGU partnered with Edvisor and rolled it out across its foundational AI curriculum and 40 additional courses.', credit: 'contributed', source: ggu.edvisor },
+    ],
+    limits: [
+      'The pilot was small by design: seven faculty members, testing with a sample of the student base the platform was intended for.',
+      'The university-level outcomes had many contributors. My part was the evaluation, the pilot and the recommendation, not the launches themselves.',
+    ],
+    links: [ggu.edvisor, ggu.digital, ggu.psych],
+  },
+  {
+    slug: 'bm-distributor',
+    org: 'B&M Distributor',
+    title: 'Launching a B2B ordering platform built on customer research',
+    role: 'Digital Product Manager',
+    period: 'June 2022 to April 2024',
+    year: 2024,
+    tier: 'major',
+    pillars: ['judgment', 'impact'],
+    domains: ['fin', 'saas'],
+    short: 'B2B ordering platform built on customer research',
+    proves: 'B2B commerce from concept to launch, with a roadmap prioritized on evidence.',
+    summary:
+      'I owned strategy and execution for a private B2B e-commerce platform supporting 200+ SKUs, from concept to launch, to improve how customers order and how orders are fulfilled.',
+    status: 'complete',
+    panel: { bg: '#eee8dc', dark: false },
+    stamp: '200+ SKUs online',
+    card: {
+      problem: 'Business customers needed a better way to order from a 200+ SKU catalog, and the team needed smoother fulfillment.',
+      role: 'Digital Product Manager. Owned strategy and execution from concept to launch.',
+      decision: 'Customer interviews, usability tests and data analysis located the friction in the ordering journey before features were chosen.',
+      outcome: 'Launched a private B2B e-commerce platform and delivered a 5-feature roadmap.',
+      evidence: 'Customer interviews, usability testing and analysis of where users dropped out of the ordering journey.',
+      relevance: 'Digital commerce, conversion work and commercial product management.',
+    },
+    context: [
+      'B&M Distributor sells to business customers. The work was a private B2B e-commerce platform for its catalog of 200+ SKUs.',
+    ],
+    problem: [
+      'Digital ordering and fulfillment workflows needed improving: customers needed an easier way to order, and the business needed orders to flow through fulfillment more smoothly.',
+    ],
+    owned: [
+      'End-to-end product strategy and execution, from conception to launch.',
+      'The product roadmap: 5 key features, prioritized across concurrent project tracks.',
+      'Translating research findings into technical product and UX improvements.',
+    ],
+    evidence: {
+      methods: ['Customer interviews.', 'Usability testing.', 'Data analysis of where users dropped out of the ordering journey.'],
+      findings: ['Friction points in the user journey, which became the basis for product and UX changes.'],
+    },
+    approach: [
+      'Prioritized the roadmap by weighing three things for every feature: return on investment, user needs and technical constraints.',
+      'Ran several project tracks at once, sequencing the 5 key features against those constraints.',
+    ],
+    outcomes: [
+      { figure: '200+', text: 'SKUs supported on the launched B2B e-commerce platform.', credit: 'owned' },
+      { figure: '5', text: 'Key features delivered from a roadmap I prioritized.', credit: 'led' },
+    ],
+  },
+  {
+    slug: 'pmi-career-quest',
+    org: 'PMI San Francisco Bay Area Chapter',
+    title: 'Turning a certification into a journey people finish',
+    role: 'Product Owner',
+    period: '2025, Next Generation Leaders Program',
+    year: 2025,
+    tier: 'major',
+    pillars: ['judgment', 'technical'],
+    domains: ['ai', 'saas'],
+    short: 'An AI path to certification people finish',
+    proves: 'A vague engagement problem turned into a staged journey, shipped as a working multi-agent build.',
+    summary:
+      'In a 3 to 4 month competitive program, my team revamped Career Quest, the chapter’s existing career program, into an AI-powered, gamified path to PMP certification. We won both of the team’s first-place awards.',
+    status: 'complete',
+    panel: { bg: '#e4e9ec', dark: false },
+    stamp: '2 first-place awards',
+    image: {
+      src: 'images/pmi-career-quest.webp',
+      alt: 'A tablet on a desk showing a PMI San Francisco Bay Area Chapter web page about PMP exam preparation.',
+      caption: 'PMP exam preparation on the PMI San Francisco Bay Area Chapter site.',
+      ratio: 792 / 1055,
+    },
+    card: {
+      problem: 'Aspiring project managers stalled before PMP certification: unclear eligibility, too much unstructured material, no personal guidance.',
+      role: 'Product Owner. Owned vision, roadmap and prioritization across design and development.',
+      decision: 'Treated certification as a five-stage journey, with AI-generated study plans and gamified milestones.',
+      outcome: 'Creative Thinker and Synergy in Presentation awards, both first place. Presented to chapter leadership.',
+      evidence: 'User research with aspiring project managers, and working sessions with chapter stakeholders on funnel drop-off.',
+      relevance: 'AI prototyping and product innovation.',
+    },
+    context: [
+      'Career Quest is an existing program of the PMI San Francisco Bay Area Chapter. Teams in the chapter’s Next Generation Leaders Program were asked to revamp it.',
+      'The result was an AI-powered, gamified guidance platform for the PMP certification journey, framed as a B2B SaaS application for HR tech and education.',
+    ],
+    problem: [
+      'Many aspiring project managers were interested in PMP certification but struggled to understand eligibility, navigate preparation steps and choose which learning resources to follow.',
+      'For the chapter, that friction limited engagement with its learning content and conversion into certification programs.',
+    ],
+    owned: [
+      'Product vision, roadmap and prioritization as Product Owner.',
+      'Cross-functional execution across design and development teams.',
+      'End-to-end flows for onboarding and profiling, PMP readiness assessment, AI-generated study roadmaps and gamified progress tracking.',
+      'The final demo and pitch to judges and chapter leadership.',
+    ],
+    evidence: {
+      methods: [
+        'Rapid user research with aspiring project managers and early-career professionals.',
+        'Working sessions with chapter stakeholders on certification requirements, learner pathways and funnel drop-off.',
+      ],
+      findings: [
+        'The steps toward PMP certification were unclear.',
+        'The volume of unstructured study material was overwhelming.',
+        'Guidance was not personalized to experience level.',
+      ],
+    },
+    approach: [
+      'A personalized pathway that assesses experience, identifies skill gaps by PMP domain and recommends a learning path using chapter content.',
+      'Gamification to encourage progress through certification milestones.',
+      'Success measured by progression through stages, engagement with chapter content and conversion into certification readiness.',
+    ],
+    execution: [
+      'Coordinated rapid prototyping cycles within the program’s deadlines.',
+      'Tested iteratively during sprints, checking the clarity of pathway recommendations and refining the gamification loops from engagement feedback.',
+      'Incorporated feedback from judges and industry experts into the final iteration.',
+    ],
+    outcomes: [
+      { figure: '1st', text: 'Creative Thinker Award, for the most innovative multi-agent solution in the cohort.', credit: 'team' },
+      { figure: '1st', text: 'Synergy in Presentation Award, for the strongest team synergy and cohesion.', credit: 'team' },
+      { text: 'Presented to chapter leadership, including the Chief Program Officer, with discussion of integrating it into the chapter’s offerings.', credit: 'team' },
+    ],
+    limits: [
+      'A working build during the program, using the Claude and OpenAI APIs. It is no longer live.',
+      'Designed for about 500 concurrent users. That was a design target, not a tested load.',
+    ],
+  },
+  {
+    slug: 'jetsweat',
+    org: 'Jetsweat',
+    title: 'Designing what the studio owner sees',
+    role: 'Product Designer, enterprise B2B SaaS',
+    period: 'February to May 2022',
+    year: 2022,
+    tier: 'supporting',
+    pillars: ['technical', 'impact'],
+    domains: ['saas'],
+    short: 'Dashboards for fitness-business owners',
+    proves: 'Design for the operator, carried through to enterprise onboarding.',
+    summary:
+      'UX and UI design across web, iOS and Android for Jetsweat’s platform for fitness businesses. I helped win and personally onboarded two enterprise clients.',
+    status: 'complete',
+    panel: { bg: '#e0ebe5', dark: false },
+    stamp: '2 enterprise clients onboarded',
+    image: {
+      src: 'images/jetsweat-devices.webp',
+      alt: 'Jetsweat dashboard on a tablet and a phone, showing a featured class, navigation and a weekly calendar.',
+      caption: 'Jetsweat dashboard on web and mobile.',
+      ratio: 1536 / 1236,
+    },
+    gallery: [
+      { src: 'images/jetsweat-analytics.webp', alt: 'Jetsweat analytics panels showing customer count over time and subscriber metrics such as lifetime value, churn and trial conversion.', caption: 'Customer and subscriber analytics for studio owners.', ratio: 1600 / 727 },
+      { src: 'images/jetsweat-users.webp', alt: 'A Jetsweat users table with filter and export controls and columns for account type, sign-up date and subscription status.', caption: 'User segmentation with filters and CSV export.', ratio: 1600 / 1105 },
+    ],
+    card: {
+      problem: 'Fitness businesses were juggling separate tools for payments, scheduling, marketing and virtual classes.',
+      role: 'Product Designer. UX and UI across web, iOS and Android; user research; enterprise onboarding.',
+      decision: 'Designed one dashboard for owners: payments, scheduling, analytics, segmentation and live classes.',
+      outcome: '4 features shipped. Helped win and personally onboarded two enterprise clients.',
+      evidence: 'Interviews with gym owners, instructors and administrators, and usability sessions with pilot customers.',
+      relevance: 'B2B SaaS and enterprise UX.',
+    },
+    context: [
+      'Jetsweat offers small and mid-sized fitness businesses one platform for payment processing, scheduling, marketing, financial tracking, client engagement and live-streamed classes.',
+    ],
+    problem: [
+      'Studio owners struggled with fragmented systems for payments, scheduling and marketing, and needed to keep client relationships going through virtual classes.',
+    ],
+    owned: [
+      'UX and UI design across web, iOS and Android, applying interaction design principles.',
+      'User interviews and usability testing with studio customers to find drop-offs in the user journey.',
+      'Product demos, solution validation and enterprise onboarding across distributed teams.',
+    ],
+    evidence: {
+      methods: ['Interviews with gym owners, fitness instructors and administrators.', 'Usability sessions with pilot customers on dashboard flows, navigation and feature priority.'],
+      findings: ['Owners wanted one centralized dashboard for their business, with strong virtual capabilities.'],
+    },
+    outcomes: [
+      { figure: '4', text: 'Features shipped with distributed design teams.', credit: 'team' },
+      { figure: '2', text: 'Enterprise clients I helped win and personally onboarded, in New York and San Francisco.', credit: 'owned' },
+      { figure: '50+', text: 'Enterprise partners use Jetsweat’s platform.', credit: 'company' },
+    ],
+  },
+  {
+    slug: 'cub-financial',
+    org: 'Cub Financial',
+    title: 'A score students could see the reasons behind',
+    role: 'Product Manager, seven-person team',
+    period: 'February 2016',
+    year: 2016,
+    tier: 'supporting',
+    pillars: ['judgment'],
+    domains: ['fin'],
+    short: 'A program-matching score students could understand',
+    proves: 'An early instinct for recommendations users can understand.',
+    summary:
+      'A financial literacy tool to help undergraduates make informed decisions about post-secondary education. It won the top prize at the University of Toronto Scarborough’s #FinanceHacks.',
+    status: 'complete',
+    panel: { bg: '#e3e6ec', dark: false },
+    stamp: 'Top prize, #FinanceHacks',
+    image: {
+      src: 'images/cub-financial.webp',
+      alt: 'Cub Financial app screens showing cubScore percentages for Bachelor of Business Administration programs and a program detail view.',
+      caption: 'Cub Financial: cubScores and a program detail view.',
+      ratio: 1290 / 1252,
+    },
+    card: {
+      problem: 'Students choose programs and take on loans without clear financial guidance.',
+      role: 'Product Manager of a seven-person team.',
+      decision: 'CubScore: one score for how well a program fits a student’s finances, career prospects, location and lifestyle.',
+      outcome: 'Top prize at UTSC’s #FinanceHacks. The team continued with the campus incubator’s support.',
+      evidence: 'Surveys and interviews with students facing financial and educational planning challenges.',
+      relevance: 'Product discovery and financial technology.',
+    },
+    problem: [
+      'Students often lack clear financial guidance when choosing a university or managing student loans. Early choices can lead to higher debt and career mismatches.',
+    ],
+    owned: ['Product management for a team of two management students and five computer science students.'],
+    evidence: {
+      methods: ['Surveys and interviews with students facing financial and educational planning challenges.'],
+      findings: ['Overwhelming school choices, confusion about loan repayments and a lack of financial literacy.', 'Students wanted personalized school recommendations, clear financial roadmaps and ongoing financial education.'],
+    },
+    approach: [
+      'CubScore: a score showing how well a program matches a student’s finances, career prospects, location and lifestyle.',
+      'Personal education and finance plans, a finance dashboard with reminders, and educational content.',
+    ],
+    outcomes: [
+      { figure: '1st', text: 'Top prize at #FinanceHacks, the University of Toronto Scarborough Library’s financial literacy hackathon.', credit: 'team', source: utsc },
+      { text: 'The team continued after the hackathon with support from UTSC’s incubator. There was no outside investment.', credit: 'team' },
+    ],
+    links: [utsc],
+  },
+];
+
+export const getProject = (slug: string) => projects.find((p) => p.slug === slug);
