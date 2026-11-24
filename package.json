@@ -10,7 +10,8 @@
   "scripts": {
     "build": "node build.mjs",
     "preview": "npx --yes serve dist",
-    "dev": "node build.mjs && npx --yes serve dist"
+    "dev": "node build.mjs && npx --yes serve dist",
+    "test": "node scripts/test-engine.mjs"
   },
   "dependencies": {
     "react": "19.2.8",

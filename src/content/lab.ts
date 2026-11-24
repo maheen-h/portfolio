@@ -49,3 +49,26 @@ export const demos: Demo[] = [
     status: 'in-build',
   },
 ];
+
+/** A working, interactive prototype that opens inside the site. */
+export interface FeaturedDemo {
+  id: string;
+  href: string;
+  name: string;
+  label: string;
+  description: string;
+  scope: string;
+  relatedSlug?: string;
+}
+
+export const featuredDemo: FeaturedDemo = {
+  id: 'global-pathways',
+  href: '#lab-global-pathways',
+  name: 'Global Pathways AI — Interactive Decision Intelligence Prototype',
+  label: 'Interactive Demo',
+  description:
+    'An interactive, AI-assisted prototype that dynamically ranks career and relocation pathways based on users’ finances, household circumstances, and priorities, with personalized cost breakdowns and actionable roadmaps.',
+  scope:
+    'Your inputs drive real calculations: change savings, household, priorities or timing and the rankings, costs and roadmap recalculate. The reference figures are illustrative sample data, and rankings come from a deterministic scoring engine, not live AI inference, live data or verified visa eligibility. Not financial or immigration advice.',
+  relatedSlug: 'global-pathways-ai',
+};

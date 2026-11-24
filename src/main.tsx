@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Work from './pages/Work';
 import CaseStudy from './pages/CaseStudy';
 import { About, Contact, Lab, NotFound, Resume } from './pages/Other';
+import GlobalPathwaysLab from './pages/GlobalPathwaysLab';
 
 /* Hash routing with plain names (#work, #work-ggu-edvisor-ai) so the site
    works on any static host and inside sandboxed previews. */
@@ -28,6 +29,7 @@ function resolve(route: string) {
     if (p) return { title: p.org, el: <CaseStudy project={p} /> };
   }
   if (route === 'lab') return { title: 'Product Lab', el: <Lab /> };
+  if (route === 'lab-global-pathways') return { title: 'Global Pathways AI prototype', el: <GlobalPathwaysLab /> };
   if (route === 'about') return { title: 'About', el: <About /> };
   if (route === 'resume') return { title: 'Resume', el: <Resume /> };
   if (route === 'contact') return { title: 'Contact', el: <Contact /> };

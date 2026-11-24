@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Page } from '../components/Layout';
 import { ButtonLink } from '../components/Bits';
-import { demos, type Demo } from '../content/lab';
+import { demos, featuredDemo, type Demo } from '../content/lab';
 import { getProject } from '../content/projects';
 import { site } from '../content/site';
 
@@ -36,6 +36,27 @@ function DemoEntry({ d }: { d: Demo }) {
   );
 }
 
+function FeaturedEntry() {
+  const d = featuredDemo;
+  const related = d.relatedSlug ? getProject(d.relatedSlug) : undefined;
+  return (
+    <div className="grid gap-6 rounded-[10px] border border-ledger/40 bg-tile p-6 sm:p-8 md:grid-cols-[1fr_1.2fr] md:gap-12">
+      <div>
+        <p className="inline-block rounded-full bg-ledger px-3 py-1 text-[13px] font-medium text-night">{d.label}</p>
+        <h3 className="display mt-4 text-[1.75rem] font-semibold leading-tight tracking-tight">{d.name}</h3>
+      </div>
+      <div className="text-[15px] leading-relaxed">
+        <p>{d.description}</p>
+        <p className="mt-4 text-muted">{d.scope}</p>
+        {related && (
+          <p className="mt-4">Related case study: <a className="link font-medium" href={`#work-${related.slug}`}>{related.org}</a></p>
+        )}
+        <div className="mt-6"><ButtonLink href={d.href}>Open the prototype</ButtonLink></div>
+      </div>
+    </div>
+  );
+}
+
 export function Lab() {
   const original = demos.filter((d) => d.provenance === 'original');
   const rebuilt = demos.filter((d) => d.provenance === 'reconstructed');
@@ -44,6 +65,10 @@ export function Lab() {
       <PageHeader title="Product Lab">
         <p>Interactive demos, each built to make one product principle tangible. I keep two kinds apart: implementations based on original work, and demos rebuilt for this site to show how I think.</p>
       </PageHeader>
+      <section aria-labelledby="featured" className="mb-12">
+        <h2 id="featured" className="pb-2 font-serif text-xl font-semibold">Featured</h2>
+        <FeaturedEntry />
+      </section>
       <section aria-labelledby="original">
         <h2 id="original" className="pb-2 font-serif text-xl font-semibold">Based on original work</h2>
         <ul>{original.map((d) => <DemoEntry key={d.id} d={d} />)}</ul>
