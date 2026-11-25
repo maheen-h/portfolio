@@ -287,7 +287,7 @@ export const projects: CaseStudy[] = [
     year: 2022,
     tier: 'supporting',
     pillars: ['technical', 'impact'],
-    domains: ['saas', 'fin', 'erp'],
+    domains: ['saas', 'erp'],
     short: 'An operations and ERP platform for fitness businesses',
     proves: 'Design for the operator, carried through to enterprise onboarding.',
     summary:

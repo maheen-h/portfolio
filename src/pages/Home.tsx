@@ -8,7 +8,7 @@ import { demos, featuredDemo } from '../content/lab';
 const proof: { figure: string; label: string; slug?: string; credit: Credit }[] = [
   { figure: '16 wks', label: 'To an internal MVP of an AI financial planning platform', slug: 'global-pathways-ai', credit: 'led' },
   { figure: '40+', label: 'Courses now using the AI platform I piloted', slug: 'ggu-edvisor-ai', credit: 'contributed' },
-  { figure: '60%', label: 'Less processing time after I automated reconciliation', credit: 'owned' },
+  { figure: '60%', label: 'Less processing time after I automated fund accounting', credit: 'owned' },
   { figure: '2', label: 'First-place awards for an AI prototype', slug: 'pmi-career-quest', credit: 'team' },
 ];
 
@@ -68,7 +68,7 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-[30em] text-[20px] font-medium leading-snug text-ledger sm:text-[22px]">
             I build 0-to-1 AI, SaaS, and cloud products that simplify financial planning and payments.{' '}
-            <span className="text-ink/70">Backed by an earlier career in tax and automated fund accounting at PwC and Citco.</span>
+            <span className="text-ink/70">Backed by an earlier career in tax and fund accounting at PwC and Citco, where I automated core workflows.</span>
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#work" className="inline-flex min-h-12 items-center rounded-full bg-ledger px-5 text-[15px] font-medium text-night transition hover:brightness-110">See the work</a>

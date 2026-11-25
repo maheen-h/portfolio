@@ -84,7 +84,7 @@ export function Lab() {
 /* ---------- About ---------- */
 
 const arc = [
-  { years: '2014 to 2020', title: 'Finance', text: 'A tax co-op at PwC, where my team ranked first of 15 for speed and accuracy, then fund accounting at Citco for $2B+ in private equity and real estate funds, working in AWS-based financial platforms: reconciliation, treasury, capital calls and NAV reporting. I automated reconciliation in Excel and updated API connections, cutting processing time by 60%. It taught me how money actually moves through a business.' },
+  { years: '2014 to 2020', title: 'Finance', text: 'A tax co-op at PwC, where my team ranked first of 15 for speed and accuracy, then fund accounting at Citco for $2B+ in private equity and real estate funds, working in AWS-based financial platforms: reconciliation, treasury, capital calls and NAV reporting. I automated fund accounting on an AWS-based system, cutting processing time by 60%. It taught me how money actually moves through a business.' },
   { years: '2016', title: 'A first product', text: 'As product manager of a seven-person team, I took Cub Financial, a tool that helps students choose a degree with their finances in mind, to the top prize at a University of Toronto financial literacy hackathon.' },
   { years: '2020 to 2022', title: 'Research and design', text: 'Product discovery and prototyping for five small businesses moving online during COVID-19, then UX and UI design across web, iOS and Android for Jetsweat’s operations and ERP platform for fitness businesses, covering payments, scheduling, marketing, financial tracking and live classes.' },
   { years: '2022 to 2024', title: 'Product ownership', text: 'Digital product manager for a private B2B ordering platform at B&M Distributor, from concept to launch: interviews, usability testing, journey analysis and a roadmap across ordering, catalog and checkout.' },
@@ -124,7 +124,7 @@ export function About() {
           <div className="rounded-[10px] border border-rule bg-sheet p-6">
             <h3 className="text-[15px] font-semibold">Built myself</h3>
             <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-ink/85">
-              <li><span className="font-medium text-ink">Reconciliation automation.</span> Excel automation and updated API connections at Citco, cutting processing time by 60%.</li>
+              <li><span className="font-medium text-ink">Fund accounting automation.</span> Automated fund accounting on an AWS-based system at Citco, cutting processing time by 60%.</li>
               <li><span className="font-medium text-ink">A relocation planning prototype.</span> Built in Lovable to model costs and funding gaps across relocation routes; now in the <a className="link" href="#lab-global-pathways">Product Lab</a>.</li>
               <li><span className="font-medium text-ink">A brand-voice agent.</span> A Claude skill I wrote and use with Canva through a connector.</li>
               <li><span className="font-medium text-ink">UX and UI designs.</span> Web, iOS and Android designs for Jetsweat.</li>
@@ -161,7 +161,7 @@ const roles = [
   { period: 'June 2022 to April 2024', role: 'Digital Product Manager', org: 'B&M Distributor', slug: 'bm-distributor', points: ['Owned strategy and execution for a private B2B ordering platform supporting 200+ SKUs, from concept to launch.', 'Prioritized a roadmap of 5 key features across ordering, catalog and checkout by ROI, user needs and technical constraints.'] },
   { period: 'February to May 2022', role: 'Product Designer', org: 'Jetsweat', slug: 'jetsweat', points: ['UX and UI design across web, iOS and Android for an operations and ERP platform for fitness businesses; 4 features shipped with distributed teams.', 'Helped win and personally onboarded two enterprise clients.'] },
   { period: 'October 2020 to December 2021', role: 'Product Consultant', org: 'SeedxTech', points: ['Product discovery and strategy for 5 small businesses moving to virtual services during COVID-19, including 20+ customer interviews.'] },
-  { period: 'October 2018 to July 2020', role: 'Private Equity and Real Estate Fund Accountant', org: 'Citco', points: ['Reconciled 500+ accounts across cash management, treasury and NAV reporting on AWS-based financial platforms.', 'Automated reconciliation in Excel and updated API connections, cutting processing time by 60%.', 'Ran capital calls, accounts receivable and payable, and general ledger work for $2B+ in private equity and real estate funds, under IFRS and GAAP.'] },
+  { period: 'October 2018 to July 2020', role: 'Private Equity and Real Estate Fund Accountant', org: 'Citco', points: ['Reconciled 500+ accounts across cash management, treasury and NAV reporting on AWS-based financial platforms.', 'Automated fund accounting on an AWS-based system, cutting processing time by 60%.', 'Ran capital calls, accounts receivable and payable, and general ledger work for $2B+ in private equity and real estate funds, under IFRS and GAAP.'] },
   { period: 'February to April 2014', role: 'Tax Associate (co-op)', org: 'PwC', points: ['Coordinated 400+ cross-border tax compliance deliverables under regulatory deadlines; the team ranked first of 15 for speed and accuracy.'] },
 ];
 
