@@ -95,7 +95,7 @@ if (siteUrl) {
       `<meta property="og:image" content="${siteUrl}/og-image.png" />`,
       `<meta property="og:image:width" content="1200" />`,
       `<meta property="og:image:height" content="630" />`,
-      `<meta property="og:image:alt" content="Maheen Hassan, product manager: I build what users need, then prove it worked." />`,
+      `<meta property="og:image:alt" content="Maheen Hassan, product manager: I build 0-to-1 AI, SaaS and cloud products that simplify financial planning and payments." />`,
       `<meta name="twitter:image" content="${siteUrl}/og-image.png" />`,
     ].join('\n    ')
   );

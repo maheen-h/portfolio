@@ -1,6 +1,6 @@
 export const site = {
   name: 'Maheen Hassan',
-  headline: 'I build what users need, then prove it worked.',
+  headline: 'I build 0-to-1 AI, SaaS and cloud products that simplify financial planning and payments.',
   linkedin: 'https://www.linkedin.com/in/mhassan05/',
   linkedinLabel: 'linkedin.com/in/mhassan05',
 };

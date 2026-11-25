@@ -73,8 +73,8 @@ export function Footer() {
     <footer className="mt-24 bg-night text-white">
       <div className="mx-auto grid max-w-[1320px] gap-8 px-5 py-14 sm:px-8 md:grid-cols-[1fr_auto] md:items-end lg:px-12">
         <div>
-          <p className="display text-[30px] font-semibold leading-tight sm:text-[40px]">Hiring a product manager for an AI, SaaS or cloud product?</p>
-          <p className="mt-3 max-w-xl text-[16px] text-white/70">LinkedIn is the best way to reach me.</p>
+          <p className="display text-[30px] font-semibold leading-tight sm:text-[40px]">Building AI products for financial planning or payments?</p>
+          <p className="mt-3 max-w-xl text-[16px] text-white/70">I’d like to hear about it. LinkedIn is the best way to reach me.</p>
         </div>
         <LinkedInButton tone="light" />
       </div>

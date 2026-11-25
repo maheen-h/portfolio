@@ -3,12 +3,12 @@ import { FilterChips, ProjectMosaic, matches, useProjectFilter } from '../compon
 import { projects, getProject } from '../content/projects';
 import { site } from '../content/site';
 import { creditLabel, type Credit } from '../content/types';
-import { demos } from '../content/lab';
+import { demos, featuredDemo } from '../content/lab';
 
 const proof: { figure: string; label: string; slug?: string; credit: Credit }[] = [
-  { figure: '16 wks', label: 'Zero to an internal AI MVP, with a team of 10+ I hired', slug: 'global-pathways-ai', credit: 'led' },
+  { figure: '16 wks', label: 'Zero to an internal MVP of an AI career and financial planning platform', slug: 'global-pathways-ai', credit: 'led' },
   { figure: '40+', label: 'University courses now using the AI platform I piloted', slug: 'ggu-edvisor-ai', credit: 'contributed' },
-  { figure: '60%', label: 'Less processing time after I automated fund reconciliation', credit: 'owned' },
+  { figure: '60%', label: 'Less processing time after I automated fund reconciliation at Citco', credit: 'owned' },
   { figure: '2', label: 'First-place awards for an AI multi-agent prototype', slug: 'pmi-career-quest', credit: 'team' },
 ];
 
@@ -16,14 +16,15 @@ type Proof = { slug?: string; label?: string; href?: string; text: string };
 type Capability = { name: string; proof: Proof[] };
 const groups: { name: string; line: string; result: string; items: Capability[] }[] = [
   {
-    name: 'Technical product management',
+    name: 'AI and technical product management',
     line: 'AI, SaaS and cloud products, built in close partnership with engineering.',
     result: 'An internal AI MVP in 16 weeks, about 15% ahead of plan.',
     items: [
-      { name: 'AI/ML and LLM-powered products', proof: [{ slug: 'global-pathways-ai', text: 'oversaw model training and evaluation, then moved recommendations to an LLM' }] },
+      { name: 'AI/ML and LLM-powered products', proof: [{ slug: 'global-pathways-ai', text: 'an AI matching engine that ranks pathways by financial ROI and fit, built on LLMs, APIs and RAG' }] },
+      { name: 'AI evaluation', proof: [{ slug: 'global-pathways-ai', text: 'built synthetic personas and evaluation datasets, and oversaw model training and evals' }, { slug: 'ggu-edvisor-ai', text: 'evaluated where an AI teaching platform could be trusted' }] },
       { name: 'SaaS and cloud-based platforms', proof: [{ slug: 'jetsweat', text: 'designed a B2B SaaS platform across web, iOS and Android' }, { label: 'Citco', text: 'worked in AWS-based financial platforms' }] },
       { name: 'API integrations and technical workflows', proof: [{ slug: 'global-pathways-ai', text: 'led the integration of generative AI tools, APIs and LLM interfaces' }] },
-      { name: 'AI prototyping and automation', proof: [{ slug: 'pmi-career-quest', text: 'product owner on a working multi-agent build' }, { href: '#lab', label: 'Product Lab', text: 'built a brand-voice agent as a Claude skill' }] },
+      { name: 'Rapid AI prototyping', proof: [{ href: '#lab-global-pathways', label: 'Product Lab', text: 'a relocation cost and funding-gap prototype, built in Lovable' }, { slug: 'pmi-career-quest', text: 'product owner on a working multi-agent build' }] },
       { name: 'Engineering collaboration and trade-offs', proof: [{ slug: 'global-pathways-ai', text: 'resolved architecture bottlenecks and traded customization for accuracy' }] },
     ],
   },
@@ -40,14 +41,14 @@ const groups: { name: string; line: string; result: string; items: Capability[] 
     ],
   },
   {
-    name: 'Business and growth',
-    line: 'Product work tied to launches, conversion and the bottom line.',
+    name: 'Financial planning and payments',
+    line: 'Products that help people and businesses plan, pay and account for money.',
     result: 'Processing time cut by 60% through automation at Citco.',
     items: [
-      { name: 'GTM and product launches', proof: [{ slug: 'bm-distributor', text: 'took a B2B platform from concept to launch' }, { slug: 'jetsweat', text: 'ran product demos and enterprise onboarding' }] },
-      { name: 'Conversion optimization', proof: [{ slug: 'bm-distributor', text: 'found friction in the ordering journey through interviews, usability tests and drop-off analysis' }] },
-      { name: 'Commercial and operational impact', proof: [{ label: 'Citco', text: '60% less processing time' }, { slug: 'jetsweat', text: 'two enterprise clients onboarded' }] },
-      { name: 'B2B and B2C products', proof: [{ slug: 'bm-distributor', text: 'B2B commerce' }, { slug: 'cub-financial', text: 'a consumer tool for students' }] },
+      { name: 'Financial planning and feasibility', proof: [{ slug: 'global-pathways-ai', text: 'financial planning, loan planning and education-funding workflows' }, { slug: 'cub-financial', text: 'a score for how well a degree fits a student’s finances' }] },
+      { name: 'Payment and ordering workflows', proof: [{ slug: 'bm-distributor', text: 'B2B ordering and checkout across 200+ SKUs' }, { slug: 'jetsweat', text: 'payments and scheduling in one dashboard for business owners' }] },
+      { name: 'Fund operations and financial systems', proof: [{ label: 'Citco', text: 'reconciliation, treasury, capital calls and NAV reporting on AWS-based financial platforms' }] },
+      { name: 'Launches and commercial impact', proof: [{ slug: 'bm-distributor', text: 'took a B2B platform from concept to launch' }, { slug: 'jetsweat', text: 'two enterprise clients onboarded' }] },
     ],
   },
 ];
@@ -61,12 +62,12 @@ export default function Home() {
       {/* Who I am, what makes me different, and the proof */}
       <section className="grid gap-10 pb-16 pt-12 sm:pt-16 lg:grid-cols-12 lg:items-stretch lg:gap-12 lg:pb-20 lg:pt-20" aria-labelledby="hero-title">
         <div className="flex flex-col justify-center lg:col-span-7">
-          <p className="text-[15px] text-ledger">Maheen Hassan, product manager for AI, SaaS and cloud-based products</p>
-          <h1 id="hero-title" tabIndex={-1} className="display mt-4 text-[42px] font-semibold leading-[1.0] outline-none sm:text-[60px] lg:text-[72px]">
-            I build what users need, <em className="font-serif font-normal italic tracking-[-0.02em] text-ink/95">then prove it worked.</em>
+          <p className="text-[15px] text-ledger">Maheen Hassan, AI product manager with a background in finance</p>
+          <h1 id="hero-title" tabIndex={-1} className="display mt-4 text-[38px] font-semibold leading-[1.02] outline-none sm:text-[54px] lg:text-[62px]">
+            I build 0-to-1 AI, SaaS and cloud products <em className="font-serif font-normal italic tracking-[-0.02em] text-ink/95">that simplify financial planning and payments.</em>
           </h1>
           <p className="mt-6 max-w-[34em] text-[17px] leading-relaxed text-ink/80 sm:text-[18px]">
-            I’m a product manager specializing in AI-powered, SaaS and cloud-based products. I combine customer insight, technical fluency and commercial strategy to turn complex problems into scalable solutions, from 0→1 development to growth and optimization. My experience spans FinTech, EdTech, HRTech and enterprise technology.
+            I started in tax and fund accounting at PwC and Citco, where I automated reconciliation on AWS-based financial platforms. Now I build AI products that help people plan careers, education costs and loans, from customer research and LLM integration to delivery. Six years across FinTech, EdTech, HRTech and B2B SaaS.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#work" className="inline-flex min-h-12 items-center rounded-full bg-ledger px-5 text-[15px] font-medium text-night transition hover:brightness-110">See the work</a>
@@ -101,7 +102,7 @@ export default function Home() {
 
       {/* Project discovery */}
       <section className="border-t border-rule pt-12 sm:pt-16" aria-labelledby="work-heading">
-        <SectionHeading id="work-heading" title="Selected work" intro="Six products from 2016 to now. Each opens a case study with the problem, the evidence, the decision and the outcome.">
+        <SectionHeading id="work-heading" title="Selected work" intro="Six products from 2016 to now, from student finance and B2B ordering to AI planning platforms. Each opens a case study with the problem, the evidence, the decision and the outcome.">
           <FilterChips value={filter} onChange={setFilter} count={count} />
         </SectionHeading>
         <ProjectMosaic projects={projects} filter={filter} />
@@ -144,9 +145,19 @@ export default function Home() {
 
       {/* Product Lab */}
       <section className="mt-24 border-t border-rule pt-12 sm:pt-16" aria-labelledby="lab-heading">
-        <SectionHeading id="lab-heading" title="Product Lab" intro="Interactive demos, each built to show one product principle. Each says whether it comes from original work or was rebuilt for this site.">
+        <SectionHeading id="lab-heading" title="Product Lab" intro="Working prototypes, each built to show one product principle. Start with the relocation planner: change a household’s savings and watch the routes, costs and funding gaps recalculate.">
           <a href="#lab" className="inline-flex min-h-11 items-center rounded-full border border-ink/20 px-4 text-[14px] font-medium hover:border-ink/60">Open the Lab</a>
         </SectionHeading>
+        <a href={featuredDemo.href} className="mb-5 grid gap-4 rounded-[10px] border border-ledger/40 bg-tile p-6 transition-colors hover:border-ledger md:grid-cols-[1fr_1.2fr] md:gap-10 sm:p-8">
+          <div>
+            <p className="inline-block rounded-full bg-ledger px-3 py-1 text-[13px] font-medium text-night">{featuredDemo.label}</p>
+            <h3 className="display mt-3 text-[24px] font-semibold leading-tight tracking-[-0.02em]">{featuredDemo.name}</h3>
+          </div>
+          <div>
+            <p className="text-[15px] leading-relaxed text-ink/80">{featuredDemo.description}</p>
+            <p className="mt-4 text-[14px] font-medium text-ledger">Open the prototype</p>
+          </div>
+        </a>
         <ul className="grid gap-5 md:grid-cols-3">
           {demos.map((d) => (
             <li key={d.id}>

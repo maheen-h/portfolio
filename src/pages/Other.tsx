@@ -84,18 +84,18 @@ export function Lab() {
 /* ---------- About ---------- */
 
 const arc = [
-  { years: '2014 to 2020', title: 'Finance', text: 'A tax co-op at PwC, then fund accounting at Citco for private equity and real estate funds, working in AWS-based financial platforms: reconciliation, treasury, capital calls and NAV reporting. I automated reconciliation in Excel and updated API connections, cutting processing time by 60%.' },
-  { years: '2016', title: 'A first product', text: 'As product manager of a seven-person team, I took Cub Financial, a financial literacy tool for students, to the top prize at a University of Toronto hackathon.' },
-  { years: '2020 to 2022', title: 'Research and design', text: 'Product discovery and prototyping for small businesses moving online during COVID-19, then UX and UI design for Jetsweat’s B2B SaaS platform across web, iOS and Android, including enterprise onboarding.' },
-  { years: '2022 to 2024', title: 'Product ownership', text: 'Digital product manager for a private B2B e-commerce platform at B&M Distributor, from concept to launch: interviews, usability testing, journey analysis and a prioritized roadmap.' },
-  { years: '2025 to now', title: 'AI products', text: 'AI product manager at Golden Gate University, evaluating where an AI teaching platform could be trusted, then at Global Pathways AI, building an AI career-planning platform from zero to one with LLM integration.' },
+  { years: '2014 to 2020', title: 'Finance', text: 'A tax co-op at PwC, where my team ranked first of 15 for speed and accuracy, then fund accounting at Citco for $2B+ in private equity and real estate funds, working in AWS-based financial platforms: reconciliation, treasury, capital calls and NAV reporting. I automated reconciliation in Excel and updated API connections, cutting processing time by 60%. It taught me how money actually moves through a business.' },
+  { years: '2016', title: 'A first product', text: 'As product manager of a seven-person team, I took Cub Financial, a tool that helps students choose a degree with their finances in mind, to the top prize at a University of Toronto financial literacy hackathon.' },
+  { years: '2020 to 2022', title: 'Research and design', text: 'Product discovery and prototyping for five small businesses moving online during COVID-19, then UX and UI design for Jetsweat’s B2B SaaS platform, which brings payments and scheduling together for fitness businesses, across web, iOS and Android.' },
+  { years: '2022 to 2024', title: 'Product ownership', text: 'Digital product manager for a private B2B ordering platform at B&M Distributor, from concept to launch: interviews, usability testing, journey analysis and a roadmap across ordering, catalog and checkout.' },
+  { years: '2025 to now', title: 'AI products', text: 'AI product manager at Golden Gate University, evaluating where an AI teaching platform could be trusted, then at Global Pathways AI, building an AI career and financial planning platform from zero to one: pathways ranked by financial ROI, loan and funding plans, and a roadmap to act on.' },
 ];
 
 export function About() {
   return (
     <Page>
       <PageHeader title="About">
-        <p>I’m a product manager specializing in AI-powered, SaaS and cloud-based products. I combine customer insight, technical fluency and commercial strategy to turn complex problems into scalable solutions, from 0→1 development to growth and optimization.</p><p className="mt-4">My six years span FinTech, EdTech, HRTech and enterprise technology. The path ran through fund accounting and design before product management, and each step left a habit I still use.</p>
+        <p>I build 0-to-1 AI, SaaS and cloud products that simplify financial planning and payments. I combine customer insight, technical fluency and a finance background to turn complicated money decisions into products people can act on.</p><p className="mt-4">My six years span FinTech, EdTech, HRTech and B2B SaaS. The path ran through tax, fund accounting and design before product management, and each step left a habit I still use.</p>
       </PageHeader>
       <ol className="border-l border-rule pl-6 sm:pl-10">
         {arc.map((a) => (
@@ -114,7 +114,8 @@ export function About() {
           <div className="rounded-[10px] border border-rule bg-sheet p-6">
             <h3 className="text-[15px] font-semibold">Led, oversaw or worked with</h3>
             <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-ink/85">
-              <li><span className="font-medium text-ink">AI/ML model training and evaluation.</span> Oversaw the engineering team’s training, dataset curation and evaluation benchmarks at Global Pathways AI.</li>
+              <li><span className="font-medium text-ink">AI/ML model training and evaluation.</span> Built synthetic personas and evaluation datasets, and oversaw the engineering team’s model training and AI evals at Global Pathways AI.</li>
+              <li><span className="font-medium text-ink">LLMs, RAG and API integrations.</span> The AI matching engine at Global Pathways AI that ranks pathways by financial ROI and fit.</li>
               <li><span className="font-medium text-ink">LLMs, generative AI tools and APIs.</span> Led their integration into product workflows with engineers at Global Pathways AI.</li>
               <li><span className="font-medium text-ink">Claude and OpenAI APIs.</span> Product owner on the PMI team’s working multi-agent build.</li>
               <li><span className="font-medium text-ink">AWS-based financial platforms.</span> Used daily for fund operations at Citco.</li>
@@ -124,6 +125,7 @@ export function About() {
             <h3 className="text-[15px] font-semibold">Built myself</h3>
             <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-ink/85">
               <li><span className="font-medium text-ink">Reconciliation automation.</span> Excel automation and updated API connections at Citco, cutting processing time by 60%.</li>
+              <li><span className="font-medium text-ink">A relocation planning prototype.</span> Built in Lovable to model costs and funding gaps across relocation routes; now in the <a className="link" href="#lab-global-pathways">Product Lab</a>.</li>
               <li><span className="font-medium text-ink">A brand-voice agent.</span> A Claude skill I wrote and use with Canva through a connector.</li>
               <li><span className="font-medium text-ink">UX and UI designs.</span> Web, iOS and Android designs for Jetsweat.</li>
             </ul>
@@ -154,13 +156,13 @@ export function About() {
 /* ---------- Resume ---------- */
 
 const roles = [
-  { period: 'May 2026 to present', role: 'AI Product Manager', org: 'Global Pathways AI', slug: 'global-pathways-ai', points: ['Built an internal MVP in 16 weeks, with waitlisted users, leading a distributed team of 10+ that I hired and trained.', 'Delivered about 15% ahead of the original planned timeline by resolving architecture bottlenecks.', 'Recommended moving from a trained prediction model to an LLM for accuracy.'] },
+  { period: 'May 2026 to present', role: 'AI Product Manager', org: 'Global Pathways AI', slug: 'global-pathways-ai', points: ['Built an internal MVP of an AI career and financial planning platform in 16 weeks, with waitlisted users, leading a distributed team of 10+ that I hired and trained.', 'Architected financial planning, loan planning and education-funding workflows, and an AI matching engine that ranks pathways by financial ROI and fit.', 'Delivered about 15% ahead of the original planned timeline by resolving architecture bottlenecks.', 'Recommended moving from a trained prediction model to an LLM for accuracy.'] },
   { period: 'September to December 2025', role: 'AI Product Manager', org: 'Golden Gate University', slug: 'ggu-edvisor-ai', points: ['Led the initial pilot of the Edvisor AI teaching platform with seven faculty members.', 'Recommended repositioning toward Business and Psychology and away from Law.', 'Presented pilot outcomes to 50+ executive and faculty stakeholders.'] },
-  { period: 'June 2022 to April 2024', role: 'Digital Product Manager', org: 'B&M Distributor', slug: 'bm-distributor', points: ['Owned strategy and execution for a private B2B e-commerce platform supporting 200+ SKUs.', 'Prioritized a roadmap of 5 key features by ROI, user needs and technical constraints.'] },
-  { period: 'February to May 2022', role: 'Product Designer', org: 'Jetsweat', slug: 'jetsweat', points: ['UX and UI design across web, iOS and Android; 4 features shipped with distributed teams.', 'Helped win and personally onboarded two enterprise clients.'] },
+  { period: 'June 2022 to April 2024', role: 'Digital Product Manager', org: 'B&M Distributor', slug: 'bm-distributor', points: ['Owned strategy and execution for a private B2B ordering platform supporting 200+ SKUs, from concept to launch.', 'Prioritized a roadmap of 5 key features across ordering, catalog and checkout by ROI, user needs and technical constraints.'] },
+  { period: 'February to May 2022', role: 'Product Designer', org: 'Jetsweat', slug: 'jetsweat', points: ['UX and UI design across web, iOS and Android for a platform that brings payments and scheduling together; 4 features shipped with distributed teams.', 'Helped win and personally onboarded two enterprise clients.'] },
   { period: 'October 2020 to December 2021', role: 'Product Consultant', org: 'SeedxTech', points: ['Product discovery and strategy for 5 small businesses moving to virtual services during COVID-19, including 20+ customer interviews.'] },
-  { period: 'October 2018 to July 2020', role: 'Private Equity and Real Estate Fund Accountant', org: 'Citco', points: ['Reconciled 500+ accounts across cash management, treasury and NAV reporting.', 'Automated reconciliation in Excel and updated API connections, cutting processing time by 60%.'] },
-  { period: 'February to April 2014', role: 'Tax Associate (co-op)', org: 'PwC', points: [] },
+  { period: 'October 2018 to July 2020', role: 'Private Equity and Real Estate Fund Accountant', org: 'Citco', points: ['Reconciled 500+ accounts across cash management, treasury and NAV reporting on AWS-based financial platforms.', 'Automated reconciliation in Excel and updated API connections, cutting processing time by 60%.', 'Ran capital calls, accounts receivable and payable, and general ledger work for $2B+ in private equity and real estate funds, under IFRS and GAAP.'] },
+  { period: 'February to April 2014', role: 'Tax Associate (co-op)', org: 'PwC', points: ['Coordinated 400+ cross-border tax compliance deliverables under regulatory deadlines; the team ranked first of 15 for speed and accuracy.'] },
 ];
 
 export function Resume() {
@@ -196,7 +198,7 @@ export function Contact() {
   return (
     <Page>
       <PageHeader title="Contact">
-        <p>The best way to reach me is on LinkedIn. I’m open to product manager roles on AI-powered, SaaS and cloud-based products, in any industry.</p>
+        <p>The best way to reach me is on LinkedIn. I’m open to product manager roles on AI, SaaS and cloud products, especially in financial planning, payments and FinTech.</p>
       </PageHeader>
       <ButtonLink href={site.linkedin} external>Message me on LinkedIn</ButtonLink>
       <p className="mt-4 text-[14px] text-muted">linkedin.com/in/mhassan05</p>
