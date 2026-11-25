@@ -68,7 +68,7 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-[30em] text-[20px] font-medium leading-snug text-ledger sm:text-[22px]">
             I build 0-to-1 AI, SaaS, and cloud products that simplify financial planning and payments.{' '}
-            <span className="text-ink/70">Backed by an earlier career in tax and fund accounting at PwC and Citco, where I automated core workflows.</span>
+            <span className="text-ink/70">6+ years across product and finance, including automating core workflows at PwC and Citco.</span>
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#work" className="inline-flex min-h-12 items-center rounded-full bg-ledger px-5 text-[15px] font-medium text-night transition hover:brightness-110">See the work</a>
