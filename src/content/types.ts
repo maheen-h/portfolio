@@ -52,11 +52,12 @@ export interface CardSummary {
   relevance: string;
 }
 
-export type Domain = 'ai' | 'fin' | 'saas';
+export type Domain = 'ai' | 'fin' | 'saas' | 'erp';
 export const domainLabel: Record<Domain, string> = {
   ai: 'AI and LLM products',
   fin: 'FinTech and commerce',
   saas: 'SaaS platforms',
+  erp: 'ERP and operations',
 };
 
 export interface Panel {

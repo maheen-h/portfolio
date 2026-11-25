@@ -6,10 +6,10 @@ import { creditLabel, type Credit } from '../content/types';
 import { demos, featuredDemo } from '../content/lab';
 
 const proof: { figure: string; label: string; slug?: string; credit: Credit }[] = [
-  { figure: '16 wks', label: 'Zero to an internal MVP of an AI career and financial planning platform', slug: 'global-pathways-ai', credit: 'led' },
-  { figure: '40+', label: 'University courses now using the AI platform I piloted', slug: 'ggu-edvisor-ai', credit: 'contributed' },
-  { figure: '60%', label: 'Less processing time after I automated fund reconciliation at Citco', credit: 'owned' },
-  { figure: '2', label: 'First-place awards for an AI multi-agent prototype', slug: 'pmi-career-quest', credit: 'team' },
+  { figure: '16 wks', label: 'To an internal MVP of an AI financial planning platform', slug: 'global-pathways-ai', credit: 'led' },
+  { figure: '40+', label: 'Courses now using the AI platform I piloted', slug: 'ggu-edvisor-ai', credit: 'contributed' },
+  { figure: '60%', label: 'Less processing time after I automated reconciliation', credit: 'owned' },
+  { figure: '2', label: 'First-place awards for an AI prototype', slug: 'pmi-career-quest', credit: 'team' },
 ];
 
 type Proof = { slug?: string; label?: string; href?: string; text: string };
@@ -62,12 +62,13 @@ export default function Home() {
       {/* Who I am, what makes me different, and the proof */}
       <section className="grid gap-10 pb-16 pt-12 sm:pt-16 lg:grid-cols-12 lg:items-stretch lg:gap-12 lg:pb-20 lg:pt-20" aria-labelledby="hero-title">
         <div className="flex flex-col justify-center lg:col-span-7">
-          <p className="text-[15px] text-ledger">Maheen Hassan, AI product manager with a background in finance</p>
-          <h1 id="hero-title" tabIndex={-1} className="display mt-4 text-[38px] font-semibold leading-[1.02] outline-none sm:text-[54px] lg:text-[62px]">
-            I build 0-to-1 AI, SaaS and cloud products <em className="font-serif font-normal italic tracking-[-0.02em] text-ink/95">that simplify financial planning and payments.</em>
+          <p className="text-[15px] text-muted">Maheen Hassan — AI Product Manager</p>
+          <h1 id="hero-title" tabIndex={-1} className="display mt-4 text-[42px] font-semibold leading-[1.02] outline-none sm:text-[58px] lg:text-[64px]">
+            Turning complex money workflows into <em className="font-serif font-normal italic tracking-[-0.02em] text-ink/95">effortless products.</em>
           </h1>
-          <p className="mt-6 max-w-[34em] text-[17px] leading-relaxed text-ink/80 sm:text-[18px]">
-            I started in tax and fund accounting at PwC and Citco, where I automated reconciliation on AWS-based financial platforms. Now I build AI products that help people plan careers, education costs and loans, from customer research and LLM integration to delivery. Six years across FinTech, EdTech, HRTech and B2B SaaS.
+          <p className="mt-6 max-w-[30em] text-[20px] font-medium leading-snug text-ledger sm:text-[22px]">
+            I build 0-to-1 AI, SaaS, and cloud products that simplify financial planning and payments.{' '}
+            <span className="text-ink/70">Backed by an earlier career in tax and automated fund accounting at PwC and Citco.</span>
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#work" className="inline-flex min-h-12 items-center rounded-full bg-ledger px-5 text-[15px] font-medium text-night transition hover:brightness-110">See the work</a>
@@ -102,7 +103,7 @@ export default function Home() {
 
       {/* Project discovery */}
       <section className="border-t border-rule pt-12 sm:pt-16" aria-labelledby="work-heading">
-        <SectionHeading id="work-heading" title="Selected work" intro="Six products from 2016 to now, from student finance and B2B ordering to AI planning platforms. Each opens a case study with the problem, the evidence, the decision and the outcome.">
+        <SectionHeading id="work-heading" title="Selected work" intro="Six products, each with the problem, the decision and the result.">
           <FilterChips value={filter} onChange={setFilter} count={count} />
         </SectionHeading>
         <ProjectMosaic projects={projects} filter={filter} />
@@ -110,30 +111,27 @@ export default function Home() {
 
       {/* Capabilities, each shown through real projects */}
       <section className="mt-24 border-t border-rule pt-12 sm:pt-16" aria-labelledby="capabilities">
-        <SectionHeading id="capabilities" title="What I bring to a product team" intro="Each capability links to the project that shows it." />
+        <SectionHeading id="capabilities" title="What I bring to a product team" intro="Each links to the project that proves it." />
         <div className="grid gap-5 lg:grid-cols-3">
           {groups.map((g) => (
             <article key={g.name} className="flex flex-col rounded-[10px] border border-rule bg-sheet p-6">
               <h3 className="display text-[21px] font-semibold leading-snug tracking-[-0.02em]">{g.name}</h3>
               <p className="mt-2 text-[15px] leading-relaxed text-muted">{g.line}</p>
-              <ul className="mt-5 space-y-4">
+              <ul className="mt-5 space-y-2.5">
                 {g.items.map((c) => (
                   <li key={c.name} className="text-[14.5px] leading-relaxed">
-                    <p className="font-semibold text-ink">{c.name}</p>
-                    <p className="mt-0.5 text-ink/75">
-                      {c.proof.map((pr, i) => {
-                        const proj = pr.slug ? getProject(pr.slug) : undefined;
-                        const label = proj ? proj.org : pr.label;
-                        const href = proj ? `#work-${proj.slug}` : pr.href;
-                        return (
-                          <span key={i}>
-                            {i > 0 && '; '}
-                            {href ? <a className="link font-medium text-ink/90" href={href}>{label}</a> : <span className="font-medium text-ink/90">{label}</span>}: {pr.text}
-                          </span>
-                        );
-                      })}
-                      .
-                    </p>
+                    {(() => {
+                      const pr = c.proof[0]!;
+                      const proj = pr.slug ? getProject(pr.slug) : undefined;
+                      const href = proj ? `#work-${proj.slug}` : pr.href;
+                      const label = proj ? proj.org : pr.label;
+                      return (
+                        <p>
+                          <span className="font-semibold text-ink">{c.name}</span> <span className="text-muted">·</span>{' '}
+                          {href ? <a className="link text-ink/75" href={href}>{label}</a> : <span className="text-ink/75">{label}</span>}
+                        </p>
+                      );
+                    })()}
                   </li>
                 ))}
               </ul>
@@ -145,7 +143,7 @@ export default function Home() {
 
       {/* Product Lab */}
       <section className="mt-24 border-t border-rule pt-12 sm:pt-16" aria-labelledby="lab-heading">
-        <SectionHeading id="lab-heading" title="Product Lab" intro="Working prototypes, each built to show one product principle. Start with the relocation planner: change a household’s savings and watch the routes, costs and funding gaps recalculate.">
+        <SectionHeading id="lab-heading" title="Product Lab" intro="Working prototypes. Start with the relocation planner.">
           <a href="#lab" className="inline-flex min-h-11 items-center rounded-full border border-ink/20 px-4 text-[14px] font-medium hover:border-ink/60">Open the Lab</a>
         </SectionHeading>
         <a href={featuredDemo.href} className="mb-5 grid gap-4 rounded-[10px] border border-ledger/40 bg-tile p-6 transition-colors hover:border-ledger md:grid-cols-[1fr_1.2fr] md:gap-10 sm:p-8">

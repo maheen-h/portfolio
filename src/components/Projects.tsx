@@ -3,7 +3,7 @@ import { ProjectPanel } from './Visuals';
 import { domainLabel, type CaseStudy, type Domain } from '../content/types';
 
 export type Filter = 'all' | Domain;
-const filters: Filter[] = ['all', 'ai', 'fin', 'saas'];
+const filters: Filter[] = ['all', 'ai', 'fin', 'saas', 'erp'];
 
 export function useProjectFilter() {
   return useState<Filter>('all');
