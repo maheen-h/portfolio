@@ -22,7 +22,7 @@ const groups: { name: string; line: string; result: string; items: Capability[] 
     items: [
       { name: 'AI/ML and LLM-powered products', proof: [{ slug: 'global-pathways-ai', text: 'an AI matching engine that ranks pathways by financial ROI and fit, built on LLMs, APIs and RAG' }] },
       { name: 'AI evaluation', proof: [{ slug: 'global-pathways-ai', text: 'built synthetic personas and evaluation datasets, and oversaw model training and evals' }, { slug: 'ggu-edvisor-ai', text: 'evaluated where an AI teaching platform could be trusted' }] },
-      { name: 'SaaS and cloud-based platforms', proof: [{ slug: 'jetsweat', text: 'designed a B2B SaaS platform across web, iOS and Android' }, { label: 'Citco', text: 'worked in AWS-based financial platforms' }] },
+      { name: 'SaaS and cloud-based platforms', proof: [{ slug: 'jetsweat', text: 'designed a B2B operations and ERP platform across web, iOS and Android' }, { label: 'Citco', text: 'worked in AWS-based financial platforms' }] },
       { name: 'API integrations and technical workflows', proof: [{ slug: 'global-pathways-ai', text: 'led the integration of generative AI tools, APIs and LLM interfaces' }] },
       { name: 'Rapid AI prototyping', proof: [{ href: '#lab-global-pathways', label: 'Product Lab', text: 'a relocation cost and funding-gap prototype, built in Lovable' }, { slug: 'pmi-career-quest', text: 'product owner on a working multi-agent build' }] },
       { name: 'Engineering collaboration and trade-offs', proof: [{ slug: 'global-pathways-ai', text: 'resolved architecture bottlenecks and traded customization for accuracy' }] },
@@ -46,7 +46,7 @@ const groups: { name: string; line: string; result: string; items: Capability[] 
     result: 'Processing time cut by 60% through automation at Citco.',
     items: [
       { name: 'Financial planning and feasibility', proof: [{ slug: 'global-pathways-ai', text: 'financial planning, loan planning and education-funding workflows' }, { slug: 'cub-financial', text: 'a score for how well a degree fits a student’s finances' }] },
-      { name: 'Payment and ordering workflows', proof: [{ slug: 'bm-distributor', text: 'B2B ordering and checkout across 200+ SKUs' }, { slug: 'jetsweat', text: 'payments and scheduling in one dashboard for business owners' }] },
+      { name: 'Payment and ordering workflows', proof: [{ slug: 'bm-distributor', text: 'B2B ordering and checkout across 200+ SKUs' }, { slug: 'jetsweat', text: 'payments and financial tracking in an operations and ERP platform' }] },
       { name: 'Fund operations and financial systems', proof: [{ label: 'Citco', text: 'reconciliation, treasury, capital calls and NAV reporting on AWS-based financial platforms' }] },
       { name: 'Launches and commercial impact', proof: [{ slug: 'bm-distributor', text: 'took a B2B platform from concept to launch' }, { slug: 'jetsweat', text: 'two enterprise clients onboarded' }] },
     ],

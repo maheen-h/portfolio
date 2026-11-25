@@ -61,7 +61,7 @@ export default function Work() {
         <div className="lg:col-span-7">
           <h1 tabIndex={-1} className="display text-[46px] font-semibold leading-[1] outline-none sm:text-[64px]">Work</h1>
           <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-ink/80 sm:text-[18px]">
-            Four major projects, from an AI career and financial planning platform to B2B ordering, and two earlier ones in payments and student finance. Each shows the problem, my role, the decision that mattered and the result.
+            Four major projects, from an AI career and financial planning platform to B2B ordering, and two earlier ones: an operations and ERP platform, and student finance. Each shows the problem, my role, the decision that mattered and the result.
           </p>
         </div>
         <div className="lg:col-span-5 lg:justify-self-end">
