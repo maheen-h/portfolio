@@ -69,6 +69,6 @@ export const featuredDemo: FeaturedDemo = {
   description:
     'An interactive, AI-assisted prototype that dynamically ranks career and relocation pathways based on users’ finances, household circumstances, and priorities, with personalized cost breakdowns and actionable roadmaps.',
   scope:
-    'Your inputs drive real calculations: change savings, household, priorities or timing and the rankings, costs and roadmap recalculate. The reference figures are illustrative sample data, and rankings come from a deterministic scoring engine, not live AI inference, live data or verified visa eligibility. Not financial or immigration advice.',
+    'The full relocation-planning flow from my Lovable build, rebuilt to run inside this site: landing page, sign-in, a nine-step profile intake, review, ranked routes with cost breakdowns and reasons, a what-if panel, a PDF report and an editable roadmap. Your inputs drive real calculations. In this edition, sign-in is a demo step with no account, plans are saved in your browser, and routes are ranked by a deterministic engine on illustrative sample data, not live AI research, live data or verified visa eligibility. Not financial or immigration advice.',
   relatedSlug: 'global-pathways-ai',
 };

@@ -23,14 +23,17 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 
 // 1. JavaScript
+// The Global Pathways prototype (src/gp) is split into its own chunk, loaded only on its page.
 await esbuild.build({
-  entryPoints: [path.join(src, 'main.tsx')],
+  entryPoints: { app: path.join(src, 'main.tsx') },
   bundle: true,
   minify: true,
   format: 'esm',
+  splitting: true,
   target: 'es2020',
   jsx: 'automatic',
-  outfile: path.join(dist, 'app.js'),
+  outdir: dist,
+  chunkNames: 'chunks/[name]-[hash]',
   define: { 'process.env.NODE_ENV': '"production"' },
   logLevel: 'warning',
 });
@@ -45,11 +48,16 @@ async function walk(dir) {
   }
   return out;
 }
-const candidates = new Set();
-for (const f of await walk(src)) {
-  const text = await readFile(f, 'utf8');
-  for (const tok of text.split(/[\s"'`{}<>;=]+/)) if (tok && tok.length < 120) candidates.add(tok);
+async function collect(files) {
+  const set = new Set();
+  for (const f of files) {
+    const text = await readFile(f, 'utf8');
+    for (const tok of text.split(/[\s"'`{}<>;=]+/)) if (tok && tok.length < 120) set.add(tok);
+  }
+  return set;
 }
+const gpDir = path.join(src, 'gp');
+const candidates = await collect((await walk(src)).filter((f) => !f.startsWith(gpDir + path.sep)));
 const tailwindCss = require.resolve('tailwindcss/index.css');
 const compiler = await compile(await readFile(path.join(src, 'styles.css'), 'utf8'), {
   base: src,
@@ -60,6 +68,18 @@ const compiler = await compile(await readFile(path.join(src, 'styles.css'), 'utf
 });
 const css = (await esbuild.transform(compiler.build([...candidates]), { loader: 'css', minify: true })).code;
 await writeFile(path.join(dist, 'app.css'), css);
+
+// The prototype's own design system, scoped to its shadow root.
+const gpCompiler = await compile(await readFile(path.join(gpDir, 'styles.css'), 'utf8'), {
+  base: gpDir,
+  loadStylesheet: async (id, base) => {
+    const file = id === 'tailwindcss' ? tailwindCss : path.resolve(base, id);
+    return { path: file, base: path.dirname(file), content: await readFile(file, 'utf8') };
+  },
+});
+const gpCss = (await esbuild.transform(gpCompiler.build([...(await collect(await walk(gpDir)))]), { loader: 'css', minify: true })).code;
+await mkdir(path.join(dist, 'gp'), { recursive: true });
+await writeFile(path.join(dist, 'gp', 'app.css'), gpCss);
 
 // 3. Static assets
 await cp(path.join(root, 'public'), dist, { recursive: true });

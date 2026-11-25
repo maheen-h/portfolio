@@ -5,8 +5,7 @@ import { SAMPLE_EVIDENCE, SAMPLE_FX, SAMPLE_PROFILE_FAMILY, SAMPLE_PROFILE_SOLO,
 
 const solo = rankRoutes(SAMPLE_ROUTES, SAMPLE_PROFILE_SOLO, SAMPLE_FX, SAMPLE_EVIDENCE);
 const family = rankRoutes(SAMPLE_ROUTES, SAMPLE_PROFILE_FAMILY, SAMPLE_FX, SAMPLE_EVIDENCE);
-const canada = SAMPLE_ROUTES.find((r) => r.key === "ca-express");
-if (!canada) throw new Error('Canada sample route is missing');
+const canada = SAMPLE_ROUTES.find((r) => r.key === "ca-express")!;
 
 describe("acceptance: same degree and career, different households", () => {
   it("excludes a route that bars dependants when the family must move together", () => {
@@ -18,16 +17,14 @@ describe("acceptance: same degree and career, different households", () => {
     const a = calculateRoute(canada, SAMPLE_PROFILE_SOLO, SAMPLE_FX);
     const b = calculateRoute(canada, SAMPLE_PROFILE_FAMILY, SAMPLE_FX);
     expect(b.upfrontTotal).toBeGreaterThan(a.upfrontTotal);
-    if (!b.proofOfFunds || !a.proofOfFunds) throw new Error('Missing proof-of-funds amounts');
-    expect(b.proofOfFunds.required).toBeGreaterThan(a.proofOfFunds.required);
+    expect(b.proofOfFunds!.required).toBeGreaterThan(a.proofOfFunds!.required);
   });
 
   it("does not count proof of funds twice when it overlaps settlement money", () => {
     const a = calculateRoute(canada, SAMPLE_PROFILE_SOLO, SAMPLE_FX);
     const settlement = a.lines.filter((l) => l.category === "settlement").reduce((s, l) => s + (l.amountUser ?? 0), 0);
     const others = a.lines.filter((l) => l.category !== "settlement" && l.category !== "proof_of_funds").reduce((s, l) => s + (l.amountUser ?? 0), 0);
-    if (!a.proofOfFunds) throw new Error('Missing proof-of-funds amount');
-    expect(Math.round(a.upfrontTotal)).toBe(Math.round(others + Math.max(settlement, a.proofOfFunds.required)));
+    expect(Math.round(a.upfrontTotal)).toBe(Math.round(others + Math.max(settlement, a.proofOfFunds!.required)));
   });
 
   it("produces a different ordering for the two households", () => {

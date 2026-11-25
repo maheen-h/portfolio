@@ -29,7 +29,7 @@ function resolve(route: string) {
     if (p) return { title: p.org, el: <CaseStudy project={p} /> };
   }
   if (route === 'lab') return { title: 'Product Lab', el: <Lab /> };
-  if (route === 'lab-global-pathways') return { title: 'Global Pathways AI prototype', el: <GlobalPathwaysLab /> };
+  if (route === 'lab-global-pathways' || route.startsWith('lab-global-pathways/') || route.startsWith('lab-global-pathways?')) return { title: 'Global Pathways AI prototype', el: <GlobalPathwaysLab /> };
   if (route === 'about') return { title: 'About', el: <About /> };
   if (route === 'resume') return { title: 'Resume', el: <Resume /> };
   if (route === 'contact') return { title: 'Contact', el: <Contact /> };
@@ -44,6 +44,8 @@ function App() {
   useEffect(() => {
     document.title = title ? `${title}, Maheen Hassan` : 'Maheen Hassan, Product Manager';
     if (first) return setFirst(false);
+    // Pages inside the Global Pathways prototype manage their own scroll and focus.
+    if (route.startsWith('lab-global-pathways/') || route.startsWith('lab-global-pathways?')) return;
     window.scrollTo(0, 0);
     // Move focus to the new page's heading for keyboard and screen reader users.
     requestAnimationFrame(() => document.querySelector<HTMLElement>('main h1')?.focus({ preventScroll: true }));
@@ -55,7 +57,7 @@ function App() {
         Skip to content
       </a>
       <Header route={route} />
-      <main id="main" key={route} className="flex-1">{el}</main>
+      <main id="main" key={route.startsWith('lab-global-pathways') ? 'lab-global-pathways' : route} className="flex-1">{el}</main>
       <Footer />
     </div>
   );

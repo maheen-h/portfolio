@@ -189,9 +189,7 @@ export function rankRoutes(routes: RouteResearch[], intake: Intake, fx: FxTable,
   const overflow = eligible.slice(5);
   shown.forEach((r, i) => (r.rank = i + 1));
   shown.forEach((r, i) => (r.whyRank = explain(r, shown[i - 1] ?? null, shown[i + 1] ?? null, weights, intake)));
-  const first = shown[0];
-  const second = shown[1];
-  return { shown, excluded, overflow, weights, whatWouldChange: first && second ? whatWouldFlip(routes, intake, fx, evidence, first, second) : null };
+  return { shown, excluded, overflow, weights, whatWouldChange: shown.length > 1 ? whatWouldFlip(routes, intake, fx, evidence, shown[0]!, shown[1]!) : null };
 }
 
 function explain(r: RankedRoute, above: RankedRoute | null, below: RankedRoute | null, w: Scores, intake: Intake): string[] {

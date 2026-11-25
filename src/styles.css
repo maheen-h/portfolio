@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "./components/pathways/demo.css";
 
 @font-face { font-family: "Lora"; src: url("fonts/Lora-Variable.woff") format("woff"); font-weight: 400 700; font-style: normal; font-display: swap; }
 @font-face { font-family: "Lora"; src: url("fonts/Lora-Italic-Variable.woff") format("woff"); font-weight: 400 700; font-style: italic; font-display: swap; }

@@ -1,4 +1,4 @@
-// Runs the prototype's engine tests (src/lib/engine/*.test.ts) without extra dependencies.
+// Runs the Global Pathways prototype's tests (src/gp/**/*.test.ts) without extra dependencies.
 // esbuild bundles each test file and swaps the `vitest` import for the small
 // compatible runner below, so `npm test` works with the packages already installed.
 import * as esbuild from 'esbuild';
@@ -8,8 +8,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import os from 'node:os';
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const dir = path.join(root, 'src/lib/engine');
-const files = (await readdir(dir)).filter((f) => f.endsWith('.test.ts'));
+const dir = path.join(root, 'src/gp');
+const files = (await readdir(dir, { recursive: true })).filter((f) => f.endsWith('.test.ts'));
 
 const runner = `
 const tests = [];
@@ -43,9 +43,9 @@ export async function run() {
 
 let total = 0, failed = 0;
 for (const f of files) {
-  const out = path.join(os.tmpdir(), `engine-test-${Date.now()}-${f}.mjs`);
+  const out = path.join(os.tmpdir(), `gp-test-${Date.now()}-${path.basename(f)}.mjs`);
   await esbuild.build({
-    stdin: { contents: `export * from 'vitest';\nimport './${f}';`, resolveDir: dir, loader: 'ts' },
+    stdin: { contents: `export * from 'vitest';\nimport './${f.split(path.sep).join('/')}';`, resolveDir: dir, loader: 'ts' },
     bundle: true, format: 'esm', platform: 'node', outfile: out, logLevel: 'warning',
     plugins: [{ name: 'vitest-shim', setup(b) {
       b.onResolve({ filter: /^vitest$/ }, () => ({ path: 'vitest', namespace: 'shim' }));

@@ -183,8 +183,8 @@ export function calculateRoute(route: RouteResearch, intake: Intake, fx: FxTable
     const confirmedAvailable = intake.finances.savings + savingsRate * monthOf[m];
     return { milestone: m, month: monthOf[m], cumulativeNeeded: cumulative, confirmedAvailable, gap: cumulative - confirmedAvailable };
   });
-  const departure = milestones[milestones.length - 1];
-  const fundingGapAtDeparture = Math.max(0, departure?.gap ?? 0);
+  const departure = milestones[milestones.length - 1]!;
+  const fundingGapAtDeparture = Math.max(0, departure.gap);
 
   // Months of saving needed so total cash covers total cost
   const shortfallNow = upfrontTotal - intake.finances.savings;
