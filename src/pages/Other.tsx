@@ -95,7 +95,7 @@ export function About() {
   return (
     <Page>
       <PageHeader title="About">
-        <p>I build 0-to-1 AI, SaaS and cloud products that simplify financial planning and payments. I combine customer insight, technical fluency and a finance background to turn complicated money decisions into products people can act on.</p><p className="mt-4">My six years span FinTech, EdTech, HRTech and B2B SaaS. The path ran through tax, fund accounting and design before product management, and each step left a habit I still use.</p>
+        <p>I build AI-powered SaaS and cloud products that simplify financial planning and payments, from concept to launch. I combine customer insight, technical fluency and a finance background to turn complicated money decisions into products people can act on.</p><p className="mt-4">My six years span FinTech, EdTech, HRTech and B2B SaaS. The path ran through tax, fund accounting and design before product management, and each step left a habit I still use.</p>
       </PageHeader>
       <ol className="border-l border-rule pl-6 sm:pl-10">
         {arc.map((a) => (

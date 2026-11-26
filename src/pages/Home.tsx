@@ -67,7 +67,7 @@ export default function Home() {
             Turning complex money workflows into <em className="font-serif font-normal italic tracking-[-0.02em] text-ink/95">effortless products.</em>
           </h1>
           <p className="mt-6 max-w-[30em] text-[20px] font-medium leading-snug text-ledger sm:text-[22px]">
-            I build 0-to-1 AI, SaaS, and cloud products that simplify financial planning and payments.{' '}
+            I build AI-powered SaaS and cloud products that simplify financial planning and payments, from concept to launch.{' '}
             <span className="text-ink/70">6+ years across product and finance, including automating core workflows at PwC and Citco.</span>
           </p>
           <div className="mt-8 flex flex-wrap gap-3">

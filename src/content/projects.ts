@@ -17,7 +17,7 @@ export const projects: CaseStudy[] = [
     year: 2026,
     tier: 'major',
     pillars: ['judgment', 'technical', 'impact'],
-    domains: ['ai', 'saas', 'fin'],
+    domains: ['ai', 'fin'],
     short: '0-to-1 AI platform for career and financial planning',
     proves: 'Zero-to-one AI delivery for financial decisions, with a team built from scratch and an architecture call made on accuracy.',
     summary:
@@ -78,7 +78,7 @@ export const projects: CaseStudy[] = [
     year: 2025,
     tier: 'major',
     pillars: ['judgment', 'impact'],
-    domains: ['ai', 'saas'],
+    domains: ['ai'],
     short: 'An AI pilot for a university under revenue pressure',
     proves: 'Honest AI evaluation for an organization under financial pressure, turned into a recommendation executives acted on.',
     summary:
@@ -162,7 +162,7 @@ export const projects: CaseStudy[] = [
     year: 2024,
     tier: 'major',
     pillars: ['judgment', 'impact'],
-    domains: ['fin', 'saas'],
+    domains: ['fin'],
     short: 'B2B ordering and checkout, from concept to launch',
     proves: 'B2B ordering workflows from concept to launch, with a roadmap prioritized on evidence.',
     summary:
